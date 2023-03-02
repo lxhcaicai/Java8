@@ -2,6 +2,7 @@ package org.example.datetime;
 
 import org.junit.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -92,4 +93,20 @@ public class DateTimeDemo {
         boolean before = now.isBefore(localDateTime);
         System.out.println("before = " + before);
     }
+
+    @Test
+    public void test4() {
+        //Instance内部保存了秒和纳秒，一般不是给用户使用的，而是方便我们程序做一些统计
+        Instant now = Instant.now();
+        System.out.println("now = " +  now);
+
+        Instant instant = now.plusSeconds(20);
+        System.out.println("instant = " + instant);
+
+        long epochSecond = now.getEpochSecond();
+        System.out.println("epochSecond = " + epochSecond);
+        int nano = now.getNano();
+        System.out.println("nano = " + nano);
+    }
+
 }
