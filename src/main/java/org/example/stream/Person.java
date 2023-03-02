@@ -9,6 +9,12 @@ public class Person {
     public Person() {
     }
 
+    public Person(String name, Integer age, Integer score) {
+        this.name = name;
+        this.age = age;
+        this.score = score;
+    }
+
     public Person(String name, Integer age, Integer score, String sex) {
         this.name = name;
         this.age = age;
