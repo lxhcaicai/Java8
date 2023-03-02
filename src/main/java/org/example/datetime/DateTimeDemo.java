@@ -3,6 +3,8 @@ package org.example.datetime;
 import org.junit.Test;
 
 import java.time.*;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 
 public class DateTimeDemo {
 
@@ -124,5 +126,17 @@ public class DateTimeDemo {
         System.out.println("相差日 = " + period.getDays());
     }
 
+    /**
+     * ● 有时我们可能需要获取例如：将日期调整到下一个月的第一天等操作。可以通过时间校正器来进行。
+     * ● TemporalAdjuster：时间校正器。
+     * ● TemporalAdjusters：该类通过静态方法提供了大量的常用 TemporalAdjuster 的实现。
+     */
+    @Test
+    public void test6() {
+        LocalDateTime now = LocalDateTime.now();
+        //将日期和时间调整到"下一个月的第一天"
+        LocalDateTime localDateTime = now.with(TemporalAdjusters.firstDayOfNextMonth());
+        System.out.println("localDateTime = " + localDateTime);
+    }
 
 }
