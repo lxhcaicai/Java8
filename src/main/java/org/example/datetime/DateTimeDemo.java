@@ -2,10 +2,7 @@ package org.example.datetime;
 
 import org.junit.Test;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 
 public class DateTimeDemo {
 
@@ -108,5 +105,24 @@ public class DateTimeDemo {
         int nano = now.getNano();
         System.out.println("nano = " + nano);
     }
+
+    @Test
+    public void test5() {
+        //● Duration：用于计算 2 个时间（LocalTime，Instant等）的距离。
+        //● Period：用于计算 2 个日期（LocalDate）的距离。
+        Duration duration = Duration.between(LocalTime.now(), LocalTime.now().plusSeconds(60));
+
+        System.out.println("相差天 = " + duration.toDays());
+        System.out.println("相差小时 = " + duration.toHours());
+        System.out.println("相差分钟 = " + duration.toMinutes());
+        System.out.println("相差毫秒 = " + duration.toNanos());
+        System.out.println("相差秒 = " + duration.getSeconds());
+
+        Period period = Period.between(LocalDate.now(), LocalDate.now().plusDays(2).plusMonths(2));
+        System.out.println("相差年 = " + period.getYears());
+        System.out.println("相差月 = " + period.getMonths());
+        System.out.println("相差日 = " + period.getDays());
+    }
+
 
 }
