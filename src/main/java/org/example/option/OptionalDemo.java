@@ -1,5 +1,6 @@
 package org.example.option;
 
+import org.example.stream.Person;
 import org.junit.Test;
 
 import java.util.Optional;
@@ -63,4 +64,50 @@ public class OptionalDemo {
             System.out.println("str = " + str);
         }
     }
+
+    /**
+     * 获取Optional类中的值
+     */
+    @Test
+    public void test3() {
+        Optional<Object> optional = Optional.empty();
+        //orElse：如果Optional中有值，就返回Optional中的值。否则返回orElse方法中参数指定的值
+        Object obj = optional.orElse("如花");
+        System.out.println("obj = " +  obj);
+    }
+
+
+    @Test
+    public void test4() {
+        Person person = null;
+        person = new Person("hello world!", 18, 99);
+
+        String name = getTraditionUpperName(person);
+        System.out.println("name = " + name);
+
+        name = getOptionalUpperName(person);
+        System.out.println("name = " + name);
+
+    }
+
+    public String getOptionalUpperName(Person person) {
+        return Optional.ofNullable(person).map(Person::getName).map(String::toUpperCase).orElse(null);
+    }
+
+    /**
+     * 传统方式 实现需求
+     *
+     * @param person
+     * @return
+     */
+    public String getTraditionUpperName(Person person) {
+        if(null != person) {
+            String name = person.getName();
+            if(null != name) {
+                return name.toUpperCase();
+            }
+        }
+        return null;
+    }
+
 }
