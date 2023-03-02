@@ -139,4 +139,35 @@ public class DateTimeDemo {
         System.out.println("localDateTime = " + localDateTime);
     }
 
+
+    /**
+     * ● JDK8 中加入了对时区的支持，LocalDate、LocalTime、LocalDateTIme 是不带时区的，带时区的日期时间类分别是 ZonedDate、ZonedTime、ZonedDateTime。
+     * ● 其中每个时区都对应的ID，ID的格式是“区域/城市”，比如：Asia/Shanghai等。
+     * ● ZoneId：该类中包含了所有的时区信息。
+     */
+    @Test
+    public void test7() {
+        //获取所有的时区信息
+        ZoneId.getAvailableZoneIds().forEach(System.out::println);
+        //获取当前默认的时区
+        String id = ZoneId.systemDefault().getId();
+        System.out.println("默认的时区id = " + id);
+        //不带时区，获取计算机的当前时间
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("不带时区的当前时间 = " + now);
+        //操作带时区的类
+        ZonedDateTime bz = ZonedDateTime.now(Clock.systemUTC());
+        System.out.println("世界标准时间 = " + bz);
+        ZonedDateTime time = ZonedDateTime.now(ZoneId.systemDefault());
+        System.out.println("带时区的当前时间 = " + time);
+        //修改时区
+        ZonedDateTime dateTime = ZonedDateTime.now(ZoneId.of("America/Los_Angeles"));
+        //withZoneSameInstant既改时区，也改时间
+        ZonedDateTime zonedDateTime = dateTime.withZoneSameInstant(ZoneId.systemDefault());
+        //withZoneSameLocal只改时区
+        ZonedDateTime zonedDateTime1 = dateTime.withZoneSameLocal(ZoneId.systemDefault());
+        System.out.println("修改时区和时间 = " + zonedDateTime);
+        System.out.println("只改时区 = " + zonedDateTime1);
+    }
+
 }
