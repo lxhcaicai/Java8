@@ -170,4 +170,12 @@ public class DoTest {
         String s2 = new String("HELLO");
         System.out.println(s1.equalsIgnoreCase(s2));
     }
+
+    @Test
+    public void test13() {
+        String s1 = "i";
+        String s2 = "love";
+
+        System.out.println(s1.compareTo(s2));
+    }
 }
