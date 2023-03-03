@@ -246,4 +246,11 @@ public class DoTest {
         System.out.println(str2 + "在" + str + "中从后往前的索引是：" + index);
     }
 
+    @Test
+    public void test20() {
+        String str = "Java is a good computer language";
+        System.out.println(str.substring(5));
+        System.out.println(str.substring(5, 11));
+    }
+
 }
