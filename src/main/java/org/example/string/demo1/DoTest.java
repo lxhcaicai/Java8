@@ -275,4 +275,16 @@ public class DoTest {
         System.out.println(new String(str.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8));
     }
 
+    @Test
+    public void test23() {
+        String str = "我爱中国，我喜欢Java语言，但是我的英语不咋的";
+        System.out.println(str.startsWith("我")); // true
+        System.out.println(str.startsWith("我爱")); // true
+        System.out.println(str.startsWith("我爱中国")); // true
+
+        System.out.println(str.endsWith("不咋的")); // true
+        System.out.println(str.endsWith("咋的")); // true
+        System.out.println(str.endsWith("的")); // true
+    }
+
 }
