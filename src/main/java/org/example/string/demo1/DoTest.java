@@ -55,4 +55,18 @@ public class DoTest {
         System.out.println("str5 = " + str5);
         System.out.println("str6 = " + str6);
     }
+
+    @Test
+    public void test4() {
+        char[] chs = {'A', 'B', '我', '是', '谁'};
+        String s = String.valueOf(chs);
+        System.out.println("s = " + s);
+
+        String s1 = String.valueOf(chs, 0, 2);
+        System.out.println("s1 = " + s1);
+
+        Object obj = "你好啊";
+        String s2 = String.valueOf(obj);
+        System.out.println("s2 = " + s2);
+    }
 }
