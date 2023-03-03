@@ -196,4 +196,23 @@ public class DoTest {
         System.out.println(s2);
         System.out.println(s3);
     }
+
+    @Test
+    public void test16() {
+        String str = "";
+
+        if ("".equals(str)) {
+            System.out.println("是空字符串");
+        }
+    }
+
+    @Test
+    public void test17() {
+        String str = "";
+        if(null != str && str.isEmpty()) {
+            System.out.println("是空字符串");
+        }
+    }
+
+
 }
