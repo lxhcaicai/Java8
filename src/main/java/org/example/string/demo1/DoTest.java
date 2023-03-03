@@ -3,6 +3,7 @@ package org.example.string.demo1;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -255,7 +256,7 @@ public class DoTest {
     }
 
     @Test
-    public void test30() {
+    public void test21() {
         // 将首字母抓换为大写
         String str = "hello World";
         str = Character.toUpperCase(str.charAt(0)) + str.substring(1);
@@ -266,6 +267,12 @@ public class DoTest {
         char[] chars = str2.toCharArray();
         Arrays.sort(chars);
         System.out.println("chars = " + Arrays.toString(chars));
+    }
+
+    @Test
+    public void test22() {
+        String str = "我爱中国";
+        System.out.println(new String(str.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8));
     }
 
 }
