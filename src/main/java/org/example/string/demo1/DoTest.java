@@ -124,4 +124,18 @@ public class DoTest {
         }
         System.out.println("str = " + str);
     }
+
+    @Test
+    public void test9() {
+        String s1 = "hello";
+        String s2 = "world";
+        String s3 = "helloworld";
+
+        String s4 = "hello".concat("world");
+        String s5 = "hello" + "world";
+
+        System.out.println(s3 == s4); // false
+        System.out.println(s3 == s5); // true
+        System.out.println(s1 + s2 == s5); // false
+    }
 }
