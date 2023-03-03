@@ -185,4 +185,15 @@ public class DoTest {
         String s2 = new String("HELLO");
         System.out.println(s1.compareToIgnoreCase(s2));;
     }
+
+    @Test
+    public void test15() {
+        String s1 = "";
+        String s2 = new String();
+        String s3 = new String("");
+
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+    }
 }
