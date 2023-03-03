@@ -229,4 +229,21 @@ public class DoTest {
         System.out.println("去掉字符串前后空白符 =" + s3);
     }
 
+    @Test
+    public void test19() {
+        String str = "hello world";
+        String str2 = "or";
+
+        boolean contains = str.contains(str2);
+        if (contains) {
+            System.out.println(str + "中是否包含" + str2);
+        }
+
+        int index = str.indexOf(str2);
+        System.out.println(str2 + "在" + str + "中从前往后查找的索引是：" + index);
+
+        index = str.lastIndexOf(str2);
+        System.out.println(str2 + "在" + str + "中从后往前的索引是：" + index);
+    }
+
 }
