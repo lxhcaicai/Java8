@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DoTest {
@@ -251,6 +252,20 @@ public class DoTest {
         String str = "Java is a good computer language";
         System.out.println(str.substring(5));
         System.out.println(str.substring(5, 11));
+    }
+
+    @Test
+    public void test30() {
+        // 将首字母抓换为大写
+        String str = "hello World";
+        str = Character.toUpperCase(str.charAt(0)) + str.substring(1);
+        System.out.println("str = " + str); // Hello World
+
+        // 将字符串中的字符按照大小顺序排列
+        String str2 = "helloworldjava";
+        char[] chars = str2.toCharArray();
+        Arrays.sort(chars);
+        System.out.println("chars = " + Arrays.toString(chars));
     }
 
 }
