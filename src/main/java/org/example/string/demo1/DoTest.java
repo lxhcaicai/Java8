@@ -214,5 +214,19 @@ public class DoTest {
         }
     }
 
+    @Test
+    public void  test18() {
+        String str = "hello world";
+        String s = str.toUpperCase();
+        System.out.println("将字符串中的小写字母转换为大写字母 = " + s);
+
+        String str2 = "Hello WorLD";
+        String s1 = str2.toLowerCase();
+        System.out.println("将字符串中的大写字母转换为小写字母 = " + s1);
+
+        String str3 = "   hello world   ";
+        String s3 = str3.trim();
+        System.out.println("去掉字符串前后空白符 =" + s3);
+    }
 
 }
