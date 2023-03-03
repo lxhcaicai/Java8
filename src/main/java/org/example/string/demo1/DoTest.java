@@ -97,4 +97,22 @@ public class DoTest {
         System.out.println(s3 == s4); // true
         System.out.println(s3 == s5); // true
     }
+
+    @Test
+    public void test7() {
+        final String s1 = "hello";
+        final String s2 = "world";
+
+        String s3 = "helloworld";
+
+        String s4 = s1 + "world"; // s1是常量，"world"也是常量，所以s4是常量
+
+        String s5 = s1 + s2; // s1是常量，s2是常量，所以s5是常量
+
+        String s6 = "hello" + "world"; // "hello"是常量，"world"是常量，所以s6是常量
+
+        System.out.println(s3 == s4); // true
+        System.out.println(s3 == s5); // true
+        System.out.println(s3 == s6); // true
+    }
 }
