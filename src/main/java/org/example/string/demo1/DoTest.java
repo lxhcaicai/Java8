@@ -3,6 +3,8 @@ package org.example.string.demo1;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DoTest {
 
@@ -68,5 +70,19 @@ public class DoTest {
         Object obj = "你好啊";
         String s2 = String.valueOf(obj);
         System.out.println("s2 = " + s2);
+    }
+
+    @Test
+    public void test5() {
+        int num = 123456;
+        String s = num + "";
+        System.out.println("s = " + s);
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+
+        String str = list + "";
+        System.out.println(str);
     }
 }
