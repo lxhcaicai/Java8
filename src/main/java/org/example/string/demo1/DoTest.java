@@ -85,4 +85,16 @@ public class DoTest {
         String str = list + "";
         System.out.println(str);
     }
+
+    @Test
+    public void test6() {
+        String s1 = "hello";
+        String s2 = "world";
+        String s3 = "helloworld";
+
+        String s4 = (s1 + "world").intern(); // 将拼接的结果放在常量池中
+        String s5 = (s1 +s2).intern();
+        System.out.println(s3 == s4); // true
+        System.out.println(s3 == s5); // true
+    }
 }
