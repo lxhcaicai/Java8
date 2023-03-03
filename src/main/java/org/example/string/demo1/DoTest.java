@@ -287,4 +287,19 @@ public class DoTest {
         System.out.println(str.endsWith("的")); // true
     }
 
+    @Test
+    public void test24() {
+        String iphone = "13800138000";
+        boolean matches = iphone.matches("^1[1-3]\\d{9}$");
+        System.out.println("matches = " + matches);
+    }
+
+    @Test
+    public void test25() {
+        String str = "hello22world.java;234";
+        // 将其中的非字母替换掉
+        String s = str.replaceAll("[^a-zA-Z]","");
+        System.out.println("s = " + s);
+    }
+
 }
