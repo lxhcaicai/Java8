@@ -163,4 +163,11 @@ public class DoTest {
         System.out.println(s3.equals(s4)); // true
         System.out.println(s1.equals(s4)); // true
     }
+
+    @Test
+    public void test12() {
+        String s1 = new String("hello");
+        String s2 = new String("HELLO");
+        System.out.println(s1.equalsIgnoreCase(s2));
+    }
 }
