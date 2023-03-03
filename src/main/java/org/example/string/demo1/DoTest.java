@@ -115,4 +115,13 @@ public class DoTest {
         System.out.println(s3 == s5); // true
         System.out.println(s3 == s6); // true
     }
+
+    @Test
+    public void test8() {
+        String str = "0";
+        for(int i = 0; i < 5; i ++) {
+            str += i;
+        }
+        System.out.println("str = " + str);
+    }
 }
