@@ -302,4 +302,17 @@ public class DoTest {
         System.out.println("s = " + s);
     }
 
+    @Test
+    public void test26() {
+        String str = "张三.23|李四.24|王五.25";
+        // 按照|拆分
+        String regex = "\\|";
+        String []split = str.split(regex);
+        for(String s: split) {
+            // 按照.进行拆分
+            String []str2 = s.split("\\.");
+            System.out.println(Arrays.toString(str2));
+        }
+    }
+
 }
