@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -270,5 +272,18 @@ public class DoTest {
         System.out.println("seconds = " + seconds);
         int nano = duration.getNano();
         System.out.println("nano = " + nano);
+    }
+
+    /**
+     * 日期时间格式化 DateTimeFormat
+     */
+    @Test
+    public void test19() {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String format = df.format(LocalDateTime.now());
+        System.out.println(format);
+        TemporalAccessor parse = df.parse("2011-11-11 11:11:11");
+        LocalDateTime from = LocalDateTime.from(parse);
+        System.out.println("form = " + from);
     }
 }
