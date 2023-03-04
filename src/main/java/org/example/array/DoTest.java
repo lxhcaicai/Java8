@@ -3,6 +3,7 @@ package org.example.array;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class DoTest {
     // 数组的反转
@@ -204,6 +205,32 @@ public class DoTest {
         System.arraycopy(arr, 2, arr ,1 ,1);
         // 最后一个元素置空
         arr[2] = null;
+        System.out.println(Arrays.toString(arr));
+    }
+
+    @Test
+    public void test12() {
+        int[] arr = new int[5];
+        // 打印数组, 输出地址值
+        System.out.println(arr);
+
+        System.out.println("arr 数组的初始形态:" + Arrays.toString(arr));
+        Arrays.fill(arr, 3);
+        System.out.println("arr 数组的现在状态:" + Arrays.toString(arr));
+        Random random = new Random();
+        for(int i = 0; i < arr.length; i ++) {
+            arr[i] = random.nextInt(100);
+        }
+
+        System.out.println("arr数组的现在状态 " + Arrays.toString(arr));
+        // 根据original原数组复制一个长度为newLength的新数组，并返回新数组
+        int[] arr2 = Arrays.copyOf(arr, 10);
+        System.out.println("新数组:" + Arrays.toString(arr2));
+
+        // 两个数组的比较
+        System.out.println(Arrays.equals(arr,arr2));
+        //数组排序
+        Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
