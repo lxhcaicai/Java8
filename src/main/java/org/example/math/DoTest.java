@@ -2,6 +2,10 @@ package org.example.math;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.RoundingMode;
+
 public class DoTest {
     @Test
     public void test() {
@@ -50,5 +54,30 @@ public class DoTest {
         int min = Math.min(1, -2);
         System.out.println("min = " + min);
 
+    }
+
+    // 大整数加减乘除
+    @Test
+    public void test2() {
+        BigInteger b1 = new BigInteger("124");
+        BigInteger b2 = new BigInteger("123");
+
+        System.out.println("加法：" + b1.add(b2)); // 加法：247
+        System.out.println("减法：" + b1.subtract(b2)); // 减法：1
+        System.out.println("乘法：" + b1.multiply(b2)); // 乘法：15252
+        System.out.println("除法：" + b1.divide(b2)); // 除法：1
+        System.out.println("余数：" + b1.remainder(b2)); // 余数：1
+    }
+
+    // BigDecimal
+    @Test
+    public void test3() {
+        BigDecimal b1 = new BigDecimal("3.55");
+        BigDecimal b2 = new BigDecimal("2.22");
+
+        System.out.println("加法： " + b1.add(b2));
+        System.out.println("减法： " + b1.subtract(b2));
+        System.out.println("乘法： " + b1.multiply(b2));
+        System.out.println("除法: " + b1.divide(b2, 2, RoundingMode.HALF_UP));
     }
 }
