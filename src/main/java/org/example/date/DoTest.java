@@ -224,4 +224,15 @@ public class DoTest {
         System.out.println(now.isAfter(localDateTime));
         System.out.println(now.isEqual(localDateTime));
     }
+
+    /**
+     *  指定时区日期时间 ZonedDateTime
+     */
+    @Test
+    public void test16() {
+        ZonedDateTime now = ZonedDateTime.now();
+        System.out.println("now = " + now);
+        ZonedDateTime now1 = ZonedDateTime.now(ZoneId.of("America/New_York"));
+        System.out.println("now1 = " + now1);
+    }
 }
