@@ -235,4 +235,40 @@ public class DoTest {
         ZonedDateTime now1 = ZonedDateTime.now(ZoneId.of("America/New_York"));
         System.out.println("now1 = " + now1);
     }
+
+
+    /**
+     *  持续日期/时间 Period 和 Duration
+     */
+    @Test
+    public void test17() {
+        LocalDate now = LocalDate.now();
+        System.out.println("now = " + now);
+        LocalDate future = now.plusYears(1).plusMonths(1).plusDays(1);
+        System.out.println("future = " + future);
+        Period period = Period.between(now,future);
+        int years = period.getYears();
+        System.out.println("区间相差的年 = " + years);
+        int months = period.getMonths();
+        System.out.println("区间相差的月份 = " + months); // 区间相差的月 = 1，其实就是 future 的month - now的month
+        int days = period.getDays();
+        System.out.println("区间相差的天 = " + days); // 区间相差的天 = 1，其实就是 future 的day - now的day
+        long totalMonths = period.toTotalMonths();
+        System.out.println("区间相差几个月 = " + totalMonths);
+    }
+
+    @Test
+    public void test18() {
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("now = " + now);
+        LocalDateTime future = LocalDateTime.now().plusYears(1).plusYears(1).plusDays(1)
+                .plusHours(1).plusMonths(1).plusSeconds(1).plusNanos(1);
+
+        System.out.println("future = "  + future);
+        Duration duration = Duration.between(now, future);
+        long seconds = duration.getSeconds();
+        System.out.println("seconds = " + seconds);
+        int nano = duration.getNano();
+        System.out.println("nano = " + nano);
+    }
 }
