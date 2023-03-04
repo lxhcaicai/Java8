@@ -29,4 +29,16 @@ public class DoTest {
         String os = System.getProperty("os.name");
         System.out.println("os = " + os);
     }
+
+    @Test
+    public void test3() {
+        Runtime runtime = Runtime.getRuntime();
+        Runtime runtime1 = Runtime.getRuntime();
+        System.out.println(runtime == runtime1);
+
+        long totalMemory = runtime.totalMemory();
+        System.out.println("totalMemory = " + totalMemory);
+        long freeMemory = runtime.freeMemory();
+        System.out.println("freeMemory = " + freeMemory);
+    }
 }
