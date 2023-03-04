@@ -315,4 +315,60 @@ public class DoTest {
         }
     }
 
+    /**
+     * ● 在字符串中找出连续最长数字串，返回这个串的长度，并打印这个最长数字串。
+     * ●  例如：abcd12345cd125se123456789，返回 9 ，打印出123456789。
+     */
+    @Test
+    public void test27() {
+        String str = "abcd12345cd125se123456789";
+        String[] split = str.split("[a-zA-Z]+");
+        String max = "";
+        for(String s: split) {
+            if(s.length() > max.length()) {
+                max = s;
+            }
+        }
+        System.out.println("最长的字符串是：" + max + ",它的长度是：" + max.length());
+    }
+
+
+    /**
+     *  将字符串中指定部分进行反转。比如将 "abcdefgho" 反转为 "abfedcgho" 。
+     */
+    @Test
+    public void test28() {
+        String str = "abcdefgho";
+        String reverse = reverse(str, 2, 5);
+        System.out.println("reverse = " + reverse); // abfedcgho
+    }
+
+    public static String reverse(String str, int start, int end) {
+        char[] chars = str.toCharArray();
+        for(int i = start, j = end; i < j; i ++, j --) {
+            char temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
+        }
+        return new String(chars);
+    }
+
+    @Test
+    public void test29() {
+        String a = "dsabdnabdsnabeabiwpabekabd";
+        String b = "ab";
+        int times = times(a, b);
+        System.out.println("times = " + times);
+    }
+
+    public int times(String str, String sub) {
+        int count = 0;
+        int index;
+        while((index = str.indexOf(sub))!= -1) {
+            count ++;
+            str = str.substring(index + sub.length());
+        }
+        return count;
+    }
+
 }
