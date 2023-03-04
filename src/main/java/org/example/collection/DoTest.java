@@ -2,9 +2,7 @@ package org.example.collection;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.*;
 
 public class DoTest {
 
@@ -235,11 +233,36 @@ public class DoTest {
 
     @Test
     public void test14() {
+        List<String> list = new ArrayList<>();
 
+
+        list.add("aa");
+        list.add("dd");
+        list.add("hh");
+        list.add("bb");
+
+        System.out.println("list = " + list);
+
+        Collections.reverse(list);
+
+        System.out.println("list = " + list);
+        String max = Collections.max(list);
+
+        int gg = Collections.binarySearch(list, "gg");
+        System.out.println("gg = " + gg);
     }
 
     @Test
     public void test15() {
+        List<String> list = Collections.synchronizedList(new ArrayList<>());
 
+
+        list.add("aa");
+        list.add("bb");
+        list.add("cc");
+        list.add("dd");
+        list.add("ee");
+
+        System.out.println("list = " + list);
     }
 }
