@@ -3,8 +3,10 @@ package org.example.date;
 import com.sun.org.apache.bcel.internal.generic.PUSH;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class DoTest {
     /**
@@ -60,5 +62,15 @@ public class DoTest {
         int second = calendar.get(Calendar.SECOND);
         int milliSecond = calendar.get(Calendar.MILLISECOND);
         System.out.print(year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + ":" + milliSecond);
+    }
+
+    @Test
+    public void test5() {
+        TimeZone aDefault =TimeZone.getDefault();
+        System.out.println("aDefault = " + aDefault.getID());
+        String [] availableIDs = TimeZone.getAvailableIDs();
+        System.out.println("availableIDs = " + Arrays.toString(availableIDs));
+        TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
+        System.out.println("timeZone = "+ timeZone);
     }
 }
