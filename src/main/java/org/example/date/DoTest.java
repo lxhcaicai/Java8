@@ -3,6 +3,8 @@ package org.example.date;
 import com.sun.org.apache.bcel.internal.generic.PUSH;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -72,5 +74,19 @@ public class DoTest {
         System.out.println("availableIDs = " + Arrays.toString(availableIDs));
         TimeZone timeZone = TimeZone.getTimeZone("Asia/Shanghai");
         System.out.println("timeZone = "+ timeZone);
+    }
+
+    /**
+     * SimpleDateFormat
+     * @throws ParseException
+     */
+    @Test
+    public void test6() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String format = sdf.format(date);
+        System.out.println("format = " + format);
+        Date parse = sdf.parse(format);
+        System.out.println("parse = " + parse);
     }
 }
