@@ -1,8 +1,10 @@
 package org.example.list;
 
+import com.sun.org.apache.bcel.internal.generic.PUSH;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -179,4 +181,30 @@ public class DoTest {
             System.out.println(previous);
         }
     }
+
+    @Test
+    public void test11() {
+        LinkedList<String> linkedList = new LinkedList<>();
+
+
+        linkedList.add("aa");
+        linkedList.add("bb");
+        linkedList.add("cc");
+        linkedList.add("dd");
+
+        System.out.println("linkedList = " + linkedList);
+        linkedList.addFirst("你好啊");
+        linkedList.add("你好呢");
+        System.out.println("linkedList = " + linkedList);
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.getLast());
+        linkedList.removeFirst();
+
+        System.out.println("linkedList = " + linkedList);
+
+        linkedList.removeLast();
+
+        System.out.println("linkedList = " + linkedList);
+    }
+
 }
