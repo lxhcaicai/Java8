@@ -1,5 +1,7 @@
 package org.example.classload.demo2;
 
+import org.junit.Test;
+
 public class DoTest {
     public static void main(String[] args) throws ClassNotFoundException {
         Class<?> clazz = Person.class;
@@ -14,5 +16,15 @@ public class DoTest {
 
         Class<?> aClass2 = ClassLoader.getSystemClassLoader().loadClass("org.example.classload.demo2.Person");
         System.out.println("aClass = " + aClass2);
+    }
+
+    @Test
+    public void test() {
+        Class<?> clazz = Person.class;
+
+        // 获取包信息
+        Package aPackage = clazz.getPackage();
+        String name = aPackage.getName();
+        System.out.println("name = " + name);
     }
 }
