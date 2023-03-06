@@ -31,9 +31,27 @@ public class DoTest {
 
     @Test
     public void test4() {
-        URI uri = URI.create("file:///D:/gitpace/Java8/src/main/java/org/example/file/DoTest.java");
+        URI uri = URI.create("le:///D:/gitpace/Java8/src/main/java/org/example/file/DoTest.javafi");
         File file = new File(uri);
         System.out.println("file = " + file);
     }
 
+    @Test
+    public void test5()  {
+        File file = new File("D:\\gitpace\\Java8\\src\\main\\java\\org\\example\\file\\DoTest.java");
+        // 返回由此File表示的文件或目录的名称
+        String name = file.getName();
+        System.out.println("name = " + name);
+
+        // 返回由此File表示的文件的长度
+        long length = file.length();
+        System.out.println("length = " + length);
+
+        // 将此File转换为路径名字符串
+        String path = file.getPath();
+        System.out.println("path = " + path);
+
+        long lastModified = file.lastModified();
+        System.out.println("lastModified = " + lastModified);
+    }
 }
