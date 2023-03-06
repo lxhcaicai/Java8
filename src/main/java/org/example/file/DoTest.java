@@ -3,6 +3,7 @@ package org.example.file;
 import org.junit.Test;
 
 import java.io.File;
+import java.net.URI;
 
 public class DoTest {
     @Test
@@ -28,5 +29,11 @@ public class DoTest {
         System.out.println("file = " + file);
     }
 
+    @Test
+    public void test4() {
+        URI uri = URI.create("file:///D:/gitpace/Java8/src/main/java/org/example/file/DoTest.java");
+        File file = new File(uri);
+        System.out.println("file = " + file);
+    }
 
 }
