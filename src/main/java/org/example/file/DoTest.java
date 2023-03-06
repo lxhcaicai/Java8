@@ -11,4 +11,11 @@ public class DoTest {
         File file = new File("D:\\gitpace\\Java8\\src\\main\\java\\org\\example\\file\\DoTest.java");
         System.out.println("file = " + file);
     }
+
+    // // 通过父路径名字符串和子路径名字符串创建新的File实例
+    @Test
+    public void test2() {
+        File file = new File("D:\\gitpace\\Java8\\src\\main\\java\\org\\example\\file", "DoTest.java");
+        System.out.println("file = " + file);
+    }
 }
