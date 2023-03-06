@@ -39,4 +39,16 @@ public class DoTest {
         String s = Modifier.toString(modifiers);
         System.out.println("s = " + s);
     }
+
+    //获取类名
+    @Test
+    public void test2() {
+        Class<?> clazz = Person.class;
+
+        //获取类命
+        String name = clazz.getName();
+        System.out.println("name = " + name);
+        String simpleName = clazz.getSimpleName();
+        System.out.println("simpleName = " + simpleName);
+    }
 }
