@@ -18,4 +18,15 @@ public class DoTest {
         File file = new File("D:\\gitpace\\Java8\\src\\main\\java\\org\\example\\file", "DoTest.java");
         System.out.println("file = " + file);
     }
+
+
+    @Test
+    public void test3() {
+        File parent = new File("D:\\gitpace\\Java8\\src\\main\\java\\org\\example\\file");
+        String child = "DoTest.java";
+        File file = new File(parent, child);
+        System.out.println("file = " + file);
+    }
+
+
 }
