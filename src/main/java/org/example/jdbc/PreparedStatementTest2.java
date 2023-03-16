@@ -41,6 +41,22 @@ public class PreparedStatementTest2 {
         System.out.println("executeUpdate = " + executeUpdate);
     }
 
+    @Test
+    public void insertMuti() throws SQLException {
+        String sql = "INSERT INTO `user`(username, password) VALUES (?,?)";
+        preparedStatement = connection.prepareStatement(sql);
+        for(int i = 1; i <= 100000; i ++) {
+            preparedStatement.setString(1, String.valueOf(i));
+            preparedStatement.setString(2,String.valueOf(i));
+            // “攒”sql
+            preparedStatement.addBatch();
+            if(i % 1000 == 0) {
+                preparedStatement.executeBatch();
+                preparedStatement.clearBatch();
+            }
+        }
+    }
+
     @After
     public void after() {
         if(null != preparedStatement) {
